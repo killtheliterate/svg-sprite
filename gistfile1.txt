@@ -4,7 +4,11 @@
 //
 // Mixin for applying svg sprites with png fallback. $icon-sprites adheres to
 // the compass sprites naming convention, so be mindful that "icon" is dependent
-// on your directory structure and names. See http://bit.ly/15yEcAW
+// on your directory structure and names.
+//
+// See:
+// http://compass-style.org/help/tutorials/spriting/
+// https://gist.github.com/killtheliterate/5646655
 // ---------------------------------------------------------------------------
 // Set Icon.
 @mixin set-icon($selector, $filename){
