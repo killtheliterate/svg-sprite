@@ -11,13 +11,13 @@
 // https://gist.github.com/killtheliterate/5646655
 // ---------------------------------------------------------------------------
 // Set Icon.
-@mixin set-icon($selector, $filename){
-  #{$selector}:before {
+@mixin set-icon($position, $selector, $filename){
+  #{$selector}:#{$position} {
     background-image: $icon-sprites no-repeat; // Set the default sprite CSS
     @include sprite-background-position($icon-sprites, $filename);
   }
 
-  .svg #{$selector}:before {
+  .svg #{$selector}:#{$position} {
     background-image: image-url('icon--svg/#{$filename}.svg');
     background-position: 50% 50%;
   }
