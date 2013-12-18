@@ -12,13 +12,30 @@
 // ---------------------------------------------------------------------------
 // Set Icon.
 @mixin set-icon($position, $selector, $filename){
-  #{$selector}:#{$position} {
-    background-image: $icon-sprites no-repeat; // Set the default sprite CSS
-    @include sprite-background-position($icon-sprites, $filename);
+
+  // If set bg on the element.
+  @if $position == '' {
+    #{$selector} {
+      background-image: $icon-sprites no-repeat; // Set the default sprite CSS
+      @include sprite-background-position($icon-sprites, $filename);
+    }
+
+    .svg #{$selector} {
+      background-image: image-url('icon--svg/#{$filename}.svg', false, false);
+      background-position: 50% 50%;
+    }
   }
 
-  .svg #{$selector}:#{$position} {
-    background-image: image-url('icon--svg/#{$filename}.svg', false, false);
-    background-position: 50% 50%;
+  // Else before/after.
+  @else {
+    #{$selector}:#{$position} {
+      background-image: $icon-sprites no-repeat; // Set the default sprite CSS
+      @include sprite-background-position($icon-sprites, $filename);
+    }
+
+    .svg #{$selector}:#{$position} {
+      background-image: image-url('icon--svg/#{$filename}.svg', false, false);
+      background-position: 50% 50%;
+    }
   }
 }
