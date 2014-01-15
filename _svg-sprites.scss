@@ -11,7 +11,7 @@
 // https://github.com/killtheliterate/svg-sprites
 // ---------------------------------------------------------------------------
 // Set Icon.
-@mixin set-icon($position, $selector, $filename){
+@mixin set-svg-sprite($position, $selector, $filename){
 
   // If set bg on the element.
   @if $position == '' {
