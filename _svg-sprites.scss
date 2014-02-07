@@ -16,12 +16,14 @@
   // If set bg on the element.
   @if $position == '' {
     #{$selector} {
-      background-image: $icon-sprites no-repeat; // Set the default sprite CSS
+      background-image: $icon-sprites; // Set the default sprite CSS
+      background-repeat: no-repeat;
       @include sprite-background-position($icon-sprites, $filename);
     }
 
     .svg #{$selector} {
       background-image: image-url('icon--svg/#{$filename}.svg', false, false);
+      background-repeat: no-repeat;
       background-position: 50% 50%;
     }
   }
@@ -29,12 +31,14 @@
   // Else before/after.
   @else {
     #{$selector}:#{$position} {
-      background-image: $icon-sprites no-repeat; // Set the default sprite CSS
+      background-image: $icon-sprites; // Set the default sprite CSS
+      background-repeat: no-repeat;
       @include sprite-background-position($icon-sprites, $filename);
     }
 
     .svg #{$selector}:#{$position} {
       background-image: image-url('icon--svg/#{$filename}.svg', false, false);
+      background-repeat: no-repeat;
       background-position: 50% 50%;
     }
   }
